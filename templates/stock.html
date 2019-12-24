@@ -1,0 +1,32 @@
+{% extends "staff_layout.html" %}
+        {% block title %} Stock {% endblock %}
+        {% block body %} 
+        <br>
+        <br>
+        {% if error %}
+            <h2 style="color:red;"> Error </h2>
+            <h2 style="color:red;"> {{error}} </h2>
+        {% endif %}
+        <form method = 'POST'>
+        <table border = "1" style= "text-align:center;">
+            <tr>
+                <th style="width: 200px;"> item </th>
+                <th style="width: 300px;"> available quantity </th>
+                <th style="width: 150px;"> refill by </th>
+            </tr>
+        {% for item in items %}
+            <tr style="padding:0px;">
+                <td> {{item}} </td>
+                <td style="text-align:center;"> {{quantities[item]}} </td>
+                <td> <input type="text" name='{{item}}' style="width:40px;text-align:center;"> </td>
+            </tr>
+        {% endfor %}
+        </table>
+        
+
+        <br>
+        <input type ="submit" style="align:center; background-color:pink; color:black; width:140px; height:50px;
+            font-size:25px; position:center;" value="refill" >
+        </form>
+        
+        {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "order_layout.html" %}
+        {% block title %} create new order {% endblock %} 
+        
+        {% block body %}
+        <br><br>
+        <form method = "POST">
+
+           <table border = "1">
+            <h1 style=""> Choose patty</h2>
+            <tr>
+                    <th>    </th>
+                    <th> name </th>
+
+            </tr>
+            {% for item in patties %}
+                <tr style="padding:0px;">
+                    <td> <input type="radio" name="patty" value ='{{item}}'> </td>
+                    <td> {{item}} </td>                   
+                
+                </tr>
+            {% endfor %}        
+            </table>
+        <br><br><br>
+        <input type ="submit" style="text-align:center; background-color:pink; color:black; width:140px; height:50px;
+            font-size:25px; position:center;" value="next" >
+        </form>
+        
+        
+        {% endblock %}

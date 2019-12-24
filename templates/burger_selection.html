@@ -1,0 +1,72 @@
+{% extends "order_layout.html" %}
+        {% block title %} create new order {% endblock %} 
+        
+        {% block body %}
+        <br><br><br>
+        {% if error %}
+            <h5 style = "color:teal;"> {{error}} </h5>
+        {% endif %}
+
+        <form method = "POST">
+        
+        {% if main_type != "wrap" %}  
+            <h2 > 1- choose your bun </h2>
+            <table border = "1" style= "">
+                <tr>
+                    <th>    </th>
+                    <th> type </th>
+                    <th> quantity </th>
+                </tr>
+            {% for item in buns %}
+                <tr style="padding:0px;">
+                    <td> <input type="radio" name="bun" value = '{{item}}'> </td>
+                    <td> {{item}} </td>
+                    <td> <input type="text" name = '{{item}}' style="width:40px;text-align:center;"> </td>
+                
+                </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        
+
+        <table border = "1">
+        <h2 style=""> 2- choose patty</h2>
+        <tr>
+                <th>    </th>
+                <th> name </th>
+                <th> quantity </th>
+        </tr>
+        {% for item in patties %}
+            <tr>
+                <td> <input type="checkbox" name = "patty" value = '{{item}}' > </td>
+                <td> {{item}} </td>
+                <td> <input type="text" name = '{{item}}' style="width:40px;text-align:center;"> </td>
+            </tr>
+        {% endfor %}
+        </table>
+
+        <table border = "1">
+        <h2 style=""> 3- add ingredients</h2>
+        <tr>
+                <th>    </th>
+                <th> name </th>
+                <th> quantity </th>
+                <th> price </th>
+        </tr>
+        {% for item in ingredients %}
+            <tr>
+                <td> <input type="checkbox" name="ingredient" value='{{item}}' > </td>
+                <td> {{item}} </td>
+                <td> <input type="text" name = '{{item}}' style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> ${{ingredients_prices[item]}} </td>
+            </tr>
+        {% endfor %}
+        </table>
+
+
+        <br>
+        <input type ="submit" style="text-align:center; background-color:pink; color:black; width:140px; height:50px;
+            font-size:25px; position:center;" value="next" >
+        </form>
+   
+    {% endblock %}

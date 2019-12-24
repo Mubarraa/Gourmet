@@ -1,0 +1,59 @@
+{% extends "order_layout.html" %}
+
+
+    {% block title %}
+            {% if error %}
+                invalid order
+            {% else %}
+                order confirmed!
+            {% endif %}
+    {% endblock %}
+
+
+    {% block body %}
+    <br><br><br>
+        {% if error %}
+            <h2 style = "color:teal; text-align:center;"> {{error}} </h2>
+        {% endif %}
+        {% if order %}
+            <table border = "1">
+            <h1 style=""> Your order </h2>
+            <h3 >order id: {{order.get_ID()}}</h3>
+            <h3> total cost: ${{order.total_cost()}} </h3>
+
+            {% if mainType %}
+            <h4>Main: {{mainType}} {% if mainType != 'Wrap' %} Burger {% endif %}</h4>
+            {% endif %}
+            <br>
+            <tr>
+                    <th> Item </th>
+                    <th> Quantity </th>
+            </tr>
+            {% for item in items %}
+                <tr style="padding:0px;">
+                        <td> {{item.get_name()}} </td>
+                        <td> {{quantity[item]}}
+
+                        {% if item.get_name() == 'Chocolate Sundae' %}
+                            g
+                        {% elif item.get_name() == 'Strawberry Sundae' %}
+                            g
+                        {% elif item.get_name() == 'Fries' %}
+                            g
+                        {% endif %}</td>
+
+                </tr>
+            {% endfor %}
+            </table>
+
+            <br>
+            <br>
+
+            <form method = "POST">
+            <input type ="submit" style="text-align:center; background-color:pink; color:black; height:50px;
+            font-size:25px; position:center;" value="view order status" >
+            </form>
+
+        {% endif %}
+    {% endblock %}
+

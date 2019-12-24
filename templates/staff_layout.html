@@ -1,0 +1,46 @@
+<html>
+    <head>
+
+    </head>  
+    
+    <body style = "color:pink; background-color: gray; margin:0px; text-align:center; "> 
+    
+        <h1 style = "color:black; text-align:center; background-color:pink; ">  {%block title%} {%endblock%}  </h1>     
+        
+            <li style="align: inline; float: left; margin-right:5px; background-color:pink; width:150px; height:40px;">
+                <a style = "display:block;  text-decoration: none; color:lightsalmon;" href= "/staff/Main"> Main Inventory</a> 
+            </li>
+            
+            <li style="align: inline; float: left; margin-right:5px; background-color:pink; width:150px; height:40px;">
+                <a style = "display:block;  text-decoration: none; color:lightsalmon;" href= "/staff/Drinks"> Drinks Inventory</a> 
+            </li>
+    
+            <li style="align: inline; float: left; margin-right:5px; background-color:pink; width:150px; height:40px;">
+                <a style = "display:block; text-decoration: none; color:lightsalmon;" href= "/staff/Side"> Sides Inventory</a> 
+            </li>
+            
+            <li style="align: inline; float: left; margin-right:5px; background-color:pink; width:150px; height:40px;">
+                <a style = "display:block; text-decoration: none; color:lightsalmon;" href= "/staff/Sundae"> Sundae Inventory</a> 
+            </li>
+            
+            <li style="align: inline; float: left; margin-right: 5px; background-color:pink; width:100px; height:40px;">
+                <a style = "display:block;  text-decoration: none; color:lightsalmon;" href= "/staff/stock"> Refill</a> 
+            </li>
+
+            <li style="align: inline; float: left; margin-right: 5px; background-color:pink; width:140px; height:40px;">
+                <a style = "display:block; text-decoration: none; color:lightsalmon;" href= "/staff/orders"> All Orders</a> 
+            </li>
+            
+
+            <li style="align: inline; float: left; margin-right: 5px; background-color:pink; width:120px; height:40px;">
+                <a style = "display:block;  text-decoration: none; color:lightsalmon;" href= "/staff"> Serve 
+                orders</a> 
+            </li>
+            
+            <br>
+            <br>
+
+        {%block body%}
+        {% endblock %}
+    </body>
+</html>

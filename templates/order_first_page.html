@@ -1,0 +1,33 @@
+{%extends "layout.html"%}
+
+{%block title%}
+    order
+{%endblock%}
+
+{%block body %}
+
+        <li style = "display: inline; float:left; background-color:black; margin-right: 10px;"> 
+            <a style = "display:block; padding:8px; text-decoration: none; color:pink;" href= "/staff"> Staff</a> 
+        </li>
+        
+        <br> <br>
+        
+        <h1> create new order</h1>
+        <input type="button" value="Base" style = "font-size:20px; width:180px; height:50px; background-color:white;"     
+        onclick = "location.href= '/BaseOrder/type'">
+        <br>
+        <br>
+        <input type="button" value="Custom Burger" style = "font-size:20px; background-color:white; width:180px; height:50px;"
+        onclick = "location.href= '/CustomOrder/type'">
+    <br>    
+    <br>
+    <br>
+    <form style = "padding-left:50px;" method = "POST">
+    <h1> view order status </h1>
+    <h3> order ID: </h3>
+    <input type ="text" name ="id">
+    <input type="submit" value="view" style = "font-size:20px; width:100px; height:40px; background-color:white;">
+    </form>
+  
+
+{%endblock%}

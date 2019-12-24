@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+
+    <body style = "color:pink; background-color: gray; margin:0px;"> 
+        <h1 style = "color:black; text-align:center; background-color:pink; "> ~ Current orders ~ </h1>  
+        <form>
+
+        
+        <table border = "1" style= "text-align:center;">
+            <tr>
+                <th style="width: 200px;"> Order ID </th>
+                <th style="width: 300px;"> Status </th>
+                <th style="width: 150px;"> Time </th>
+            </tr>
+        {% for order in current_orders %}
+            <tr style="padding:0px;">
+                <td> {{orderId}} </td>
+                <td style="text-align:center;"> {{quantities[item]}} </td>
+                <td> <input type="text" style="width:40px;text-align:center;"> </td>
+            </tr>
+        {% endfor %}
+        </table>
+        
+
+        <br>
+        <input type ="submit" style="align:center; background-color:pink; color:black; width:140px; height:50px;
+            font-size:25px; position:center;" value="Update status" >
+        </form>
+    </body>
+
+</html>

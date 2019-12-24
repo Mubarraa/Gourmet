@@ -1,0 +1,31 @@
+{% extends "order_layout.html" %}
+        {% block title %} check order status {% endblock %} 
+        
+        {% block body %}
+        <br> <br> <br>
+            {% if error %}
+                <h2 style = "color:teal; text-align:center;"> {{error}} </h2>
+            {% else %}
+    
+                <br>
+                <br>
+
+                <div style= "text-align : center;">
+
+                <h1> order id: {{order.get_ID()}} </h1>
+
+                <br>
+
+                {% if status == 'True' %}
+                    <h2> ready to be collected :) ! </h2>
+                {% else %}
+                    <h2> preparing ... </h2>
+                {% endif %}
+            {% endif %}
+
+
+            </div>
+
+        {% endblock %}
+
+

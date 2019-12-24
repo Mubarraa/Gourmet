@@ -1,0 +1,153 @@
+{% extends "order_layout.html" %}
+        {% block title %} Select Sides and Drinks{% endblock %}
+
+        {% block body %}
+         <br>
+         {% if error %}
+            <h5 style = "color:teal;"> {{error}} </h5>
+        {% endif %}
+
+
+        <form method = "POST">
+
+        <table border = "1">
+        <h2 style=""> Add drinks</h2>
+        <tr>
+
+                <th> name </th>
+                <th> quantity </th>
+                <th> price </th>
+        </tr>
+        {% for item in drinks %}
+            <tr>
+                <td> {{item}} </td>
+                <td> <input type="text"  name = '{{item}}' style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> ${{drinks_prices[item]}} </td>
+            </tr>
+        {% endfor %}
+
+            <table border = "1">
+            <h2 style=""> Add sides</h2>
+                <tr>
+                <th> name </th>
+                <th> size </th>
+                <th> quantity </th>
+                <th> price </th>
+                </tr>
+            <tr>
+                <td rowspan = 3> Fries </td>
+                <th> <input type="radio" name= "friessize" value = Small>Small </th>
+                <td> </td>
+                <td  style= "text-align:center;"> $2 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "friessize" value = Medium> Medium </th>
+                <td> <input type="text" name = "frinum" style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> $3 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "friessize" value = Large >Large </th>
+                <td> </td>
+                <td style= "text-align:center;"> $4 </td>
+            </tr>
+            </tr>
+
+        </table>
+
+            <table border = "1">
+                            <tr>
+                <th> name </th>
+                <th> size </th>
+                <th> quantity </th>
+                <th> price </th>
+                </tr>
+                <td rowspan = 3> Nuggets </td>
+                <th> <input type="radio" name= "nugsize" value = Small>Small </th>
+                <td> </td>
+                <td  style= "text-align:center;"> $2 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "nugsize" value = Medium> Medium </th>
+                <td> <input type="text" name = "nugnum" style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> $4 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "nugsize" value = Large >Large </th>
+                <td> </td>
+                <td style= "text-align:center;"> $6 </td>
+            </tr>
+            </tr>
+        </table>
+
+        <table border = "1">
+            <h2 style=""> Add sundae</h2>
+                <tr>
+                <th> name </th>
+                <th> size </th>
+                <th> quantity </th>
+                <th> price </th>
+                </tr>
+            <tr>
+
+                <td rowspan = 3> Chocolate Sundae </td>
+                <th> <input type="radio" name= "chocsize" value = Small>Small </th>
+
+                <td> </td>
+                <td  style= "text-align:center;"> $3 </td>
+
+            </tr>
+            <tr>
+
+                <th> <input type="radio" name= "chocsize" value = Medium> Medium </th>
+                <td> <input type="text" name = "chocnum" style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> $5 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "chocsize" value = Large >Large </th>
+                <td> </td>
+                <td style= "text-align:center;"> $6 </td>
+       
+            </tr>
+
+            </tr>
+
+        </table>
+
+            <table border = "1">
+                            <tr>
+                <th> name </th>
+                <th> size </th>
+                <th> quantity </th>
+                <th> price </th>
+                </tr>
+                <td rowspan = 3> Strawberry Sundae </td>
+                <th> <input type="radio" name= "strawsize" value = Small>Small </th>
+                <td> </td>
+                <td  style= "text-align:center;"> $3 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "strawsize" value = Medium> Medium </th>
+                <td> <input type="text" name = "strawnum" style="width:40px;text-align:center;"> </td>
+                <td style= "text-align:center;"> $5 </td>
+
+            </tr>
+            <tr>
+                <th> <input type="radio" name= "strawsize" value = Large >Large </th>
+                <td> </td>
+                <td style= "text-align:center;"> $6 </td>
+            </tr>
+            </tr>
+        </table>
+
+        <input type ="submit" name = "Checkout" style="align:center; background-color:pink; color:black; width:300px; height:50px;
+            font-size:25px; position:center;" value="Continue to Checkout" >
+
+        </form>
+   {% endblock %}
+

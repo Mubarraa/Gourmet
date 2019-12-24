@@ -1,0 +1,22 @@
+{% extends "staff_layout.html" %}
+        {% block title %} Sundae Inventory {% endblock %}
+        {% block body %} 
+
+        <br> 
+        <form>
+        
+        <table border = "1" style= "text-align:center;">
+            <tr>
+                <th style="width: 200px;"> item </th>
+                <th style="width: 300px;"> available quantity </th>
+            </tr>
+        <br>
+        {% for item in items %}
+            <tr style="padding:0px;">
+                <td> {{item}}</td>
+                
+                <td style="text-align:center;"> {{quantities[item]}} g </td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% endblock %}

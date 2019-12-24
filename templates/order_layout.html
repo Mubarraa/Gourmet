@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+
+    <body style = "color:pink; background-color: gray; margin:0px;"> 
+        <h1 style = "color:black; text-align:center; background-color:pink;">  {%block title%} {%endblock%}  </h1> 
+        <!--<img src ="https://static.thenounproject.com/png/89844-200.png" style="float:right;"> -->
+        <ul style = "list-style-type : none; text-align:center; color:white; margin : 0; margin-left :330px ;">
+    
+            <li style = "display: inline; float:left; background-color:black; margin-right: 10px;"> 
+                <a style = "display:block; padding:8px; text-decoration: none; color:white;" href= "/"> Home</a> 
+            </li>
+    
+            <li style = "display: inline; float:left; background-color:black; margin-right: 10px;"> 
+                <a style = "display:block; padding:8px;text-decoration: none; color:white;" href= "/"> View Order</a> 
+            </li>
+
+
+        </ul>
+        <br>
+        {%block body%}
+        {% endblock %}
+    </body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "staff_layout.html" %}
+        {% block title %} serve order {% endblock %}
+        {% block body %}    
+
+        <form method = "POST">
+
+        </table>
+
+        <table border = "1" style = "text-align: center;">
+        <h2 style=""> Curent Orders</h2>
+        <tr>
+                <th> Order Id </th>
+                <th> update status </th>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td> {{order.get_ID()}} </td>
+                <td> <input type="submit" name = {{order.get_ID()}} value = "serve" style="text-align:center;"> </td> 
+            </tr>
+        {% endfor %}
+        </table>
+        </form>
+        {% endblock %}

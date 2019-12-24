@@ -1,0 +1,40 @@
+{% extends "staff_layout.html" %}
+        {% block title %} All Orders {% endblock %}
+        {% block body %} 
+        
+        <h1> Current Orders: {{current_length}}  </h1>
+
+        <table border = "1" style= "text-align:center;">
+            <tr>
+                <th style="width: 100px;"> ID </th>
+                <th style="width: 400px;"> ORDER </th>
+            </tr>
+           
+        {% for order in current_orders %}
+            <tr>
+                <td> {{order.get_ID()}} </td> 
+                <td> {{order}} </td> 
+            <tr>
+        {% endfor %}
+
+        </table>
+
+        <h1> Past Orders: {{served_length}} </h1> 
+
+        <table border = "1" style= "text-align:center;">
+            <tr>
+                <th style="width: 100px;"> ID </th>
+                <th style="width: 400px;"> ORDER </th>
+            </tr>
+
+       {% for order in served_orders %}
+            <tr>
+                <td> {{order.get_ID()}} </td> 
+                <td> {{order}} </td> 
+            <tr>
+        {% endfor %}
+
+        </table>
+        
+        {% endblock %}
+        
